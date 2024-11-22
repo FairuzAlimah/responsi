@@ -90,7 +90,7 @@
             border-radius: 6px;
             font-family: Arial, sans-serif;
             font-size: 12px;
-            max-width: 260px;
+            max-width: 300px;
             display: none;
             /* Hidden by default */
         }
@@ -108,6 +108,8 @@
             right: 10px;
             z-index: 1100;
             background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            border-color: #36393f;
             padding: 8px;
             border-radius: 6px;
             cursor: pointer;
@@ -116,6 +118,10 @@
         #toggleLegend i {
             font-size: 20px;
             color: #114c79;
+        }
+        .leaflet-control-scale {
+            bottom: 15px;
+            left: 7px;
         }
     </style>
 </head>
@@ -321,7 +327,7 @@
                     '</tbody>' +
                     '</table>';
 
-                
+
                 layer.on({
                     click: function (e) {
                         // Menampilkan feature modal
@@ -339,7 +345,7 @@
                 });
             },
 
-            
+
         });
 
         // Memuat data GeoJSON
@@ -385,28 +391,28 @@
         });
 
         searchControl.on('search:locationfound', function (e) {
-                e.layer.setIcon(L.icon({
-                    iconUrl: 'icon/market.png',
-                    iconSize: [55, 55],
+            e.layer.setIcon(L.icon({
+                iconUrl: 'icon/market.png',
+                iconSize: [55, 55],
+                iconAnchor: [24, 48],
+                popupAnchor: [0, -40],
+            }));
+            if (e.layer.getPopup) {
+                e.layer.openPopup();
+            }
+        });
+
+        searchControl.on('search:collapsed', function (e) {
+            pasar_lampung.eachLayer(function (layer) {
+                layer.setIcon(L.icon({
+                    iconUrl: 'icon/pasar.png',
+                    iconSize: [38, 38],
                     iconAnchor: [24, 48],
                     popupAnchor: [0, -40],
                 }));
-                if (e.layer.getPopup) {
-                    e.layer.openPopup();
-                }
             });
-    
-            searchControl.on('search:collapsed', function (e) {
-                pasar_lampung.eachLayer(function (layer) {
-                    layer.setIcon(L.icon({
-                        iconUrl: 'icon/pasar.png',
-                        iconSize: [38, 38],
-                        iconAnchor: [24, 48],
-                        popupAnchor: [0, -40],
-                    }));
-                });
-            });
-    
+        });
+
 
         map.addControl(searchControl);  //inizialize search control
 
@@ -455,6 +461,9 @@
             }
         });
 
+       // Menambahkan kontrol skala
+       var scale = L.control.scale();
+        scale.addTo(map);
     </script>
 </body>
 
