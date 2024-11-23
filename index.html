@@ -119,6 +119,7 @@
             font-size: 20px;
             color: #114c79;
         }
+
         .leaflet-control-scale {
             bottom: 15px;
             left: 7px;
@@ -148,18 +149,70 @@
                         <a class="nav-link" href="https://palapa.lampungprov.go.id/" target="_blank"><i
                                 class="fa-solid fa-layer-group"></i> Sumber Data</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#infoModal"> <i
-                                class="fa-solid fa-circle-info" style="color: #114c79;"></i> Info</a>
-                    </li>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="data.html" target="_blank"><i
+                                        class="fa-solid fa-pen-to-square" style="color: #990070;"></i> Edit Data</a>
+                            </li>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.php" target="_blank"><i
+                                                class="fa-solid fa-table" style="color: #248a6b;"></i> Data
+                                            Tabel</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <!-- Tombol untuk membuka modal -->
+                                        <a class="nav-link active" data-bs-toggle="modal"
+                                            data-bs-target="#kritikSaranModal" href="#"><i class="fa-solid fa-envelope"
+                                                style="color: #74c0fc;"></i> Kritik &
+                                            Saran</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#infoModal">
+                                            <i class="fa-solid fa-circle-info" style="color: #114c79;"></i> Info</a>
+                                    </li>
 
-                </ul>
-            </div>
-        </div>
+                                </ul>
+                            </div>
+                    </div>
     </nav>
 
 
     <div id="map"></div>
+
+    <div class="modal fade" id="kritikSaranModal" tabindex="-1" aria-labelledby="kritikSaranLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="kritikSaranLabel">Kritik & Saran</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form Kritik & Saran -->
+                    <form id="kritikSaranForm">
+                        <div class="mb-3">
+                            <label for="namaPengguna" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="namaPengguna" placeholder="Masukkan nama Anda">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Alamat Email</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name@mail.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="kritikSaran" class="form-label">Kritik & Saran</label>
+                            <textarea class="form-control" id="kritikSaran" rows="4"
+                                placeholder="Tulis kritik dan saran Anda di sini"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="submitKritikSaran">Kirim</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Info Modal -->
     <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
@@ -196,7 +249,7 @@
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                 </div>
             </div>
         </div>
@@ -461,9 +514,27 @@
             }
         });
 
-       // Menambahkan kontrol skala
-       var scale = L.control.scale();
+        // Menambahkan kontrol skala
+        var scale = L.control.scale();
         scale.addTo(map);
+
+
+        document.getElementById('submitKritikSaran').addEventListener('click', function () {
+            const nama = document.getElementById('namaPengguna').value;
+            const saran = document.getElementById('kritikSaran').value;
+
+            if (nama && saran) {
+                alert(`Terima kasih, ${nama}! Kritik dan saran Anda telah kami terima.`);
+                // Reset form setelah submit
+                document.getElementById('kritikSaranForm').reset();
+                // Tutup modal
+                const kritikSaranModal = new bootstrap.Modal(document.getElementById('kritikSaranModal'));
+                kritikSaranModal.hide();
+            } else {
+                alert('Harap isi semua kolom sebelum mengirim.');
+            }
+        });
+
     </script>
 </body>
 

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memasukkan Data</title>
+<style>
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff5e6;
+        /* Nuansa kuning lembut */
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    form {
+        background-color: #fff;
+        /* Putih untuk kontras */
+        padding: 20px;
+        border: 2px solid #ffcc00;
+        /* Kuning sebagai aksen */
+        border-radius: 10px;
+        width: 100%;
+        max-width: 700px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        flex: 1 1 100%;
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: #e63946;
+        /* Merah cerah */
+    }
+
+    form label {
+        flex: 0 0 120px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #e63946;
+        /* Merah untuk teks label */
+    }
+
+    form input {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ffcc00;
+        /* Border kuning */
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    form input:focus {
+        border-color: #e63946;
+        /* Merah saat fokus */
+        outline: none;
+        box-shadow: 0 0 5px rgba(230, 57, 70, 0.5);
+    }
+
+    .full-width {
+        flex: 1 1 100%;
+    }
+
+    form input[type="submit"] {
+        background-color: #e63946;
+        /* Merah untuk tombol */
+        color: #fff;
+        /* Putih untuk teks tombol */
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    form input[type="submit"]:hover {
+        background-color: #ffcc00;
+        /* Kuning saat hover */
+        color: #e63946;
+        /* Merah untuk teks */
+    }
+</style>
+</head>
+<body>
+    <form action="input.php" onsubmit="return validateForm(event)" method="post">
+        <h1>Memasukkan Data</h1>
+
+        <label for="nama_pasar">Nama Pasar:</label>
+        <input type="text" id="nama_pasar" name="nama_pasar" required>
+
+        <label for="wadmkk">Nama Wilayah:</label>
+        <input type="text" id="wadmkk" name="wadmkk" required>
+
+        <label for="luas__m2_">Luas:</label>
+        <input type="number" step="any" id="luas__m2_" name="luas__m2_" required>
+
+        <label for="jml_kios">Jumlah Kios:</label>
+        <input type="number" step="any" id="jml_kios" name="jml_kios" required>
+
+        <label for="x">X:</label>
+        <input type="number" step="any" id="x" name="x" required>
+
+        <label for="y">Y:</label>
+        <input type="number" step="any" id="y" name="y" required>
+
+        <label for="alamat" class="full-width">Alamat:</label>
+        <input type="text" id="alamat" name="alamat" required class="full-width">
+
+        <input type="submit" value="Submit" class="full-width">
+        
+        <!-- Tambahkan tempat untuk menampilkan pesan error -->
+        <div id="informasi" style="color: red;"></div>
+    </form>
+
+    <script>
+        function validateForm(event) {
+            let luas__m2_ = document.getElementById("luas__m2_").value;
+            let jml_kios = document.getElementById("jml_kios").value;
+            let x = document.getElementById("x").value;
+            let y = document.getElementById("y").value;
+            let wadmkk = document.getElementById("wadmkk").value;
+            let alamat = document.getElementById("alamat").value;
+            let text = "";
+        
+            // Validasi input kosong
+            if (!luas__m2_ || !jml_kios || !x || !y || !wadmkk || !alamat) {
+                text = "Semua kolom harus diisi.";
+                document.getElementById("informasi").innerHTML = text;
+                event.preventDefault(); // Mencegah form disubmit
+                return false;
+            }
+        
+            // Validasi input luas
+            if (isNaN(parseFloat(luas__m2_)) || parseFloat(luas__m2_) <= 0) {
+                text = "Data luas harus angka dan tidak boleh bernilai negatif.";
+                document.getElementById("informasi").innerHTML = text;
+                event.preventDefault();
+                return false;
+            }
+        
+            // Validasi input jumlah kios
+            if (isNaN(parseFloat(jml_kios)) || parseFloat(jml_kios) < 0) {
+                text = "Jumlah kios harus angka dan tidak boleh bernilai negatif.";
+                document.getElementById("informasi").innerHTML = text;
+                event.preventDefault();
+                return false;
+            }
+        
+            // Validasi input koordinat X
+            if (isNaN(parseFloat(x))) {
+                text = "Koordinat X harus berupa angka.";
+                document.getElementById("informasi").innerHTML = text;
+                event.preventDefault();
+                return false;
+            }
+        
+            // Validasi input koordinat Y
+            if (isNaN(parseFloat(y))) {
+                text = "Koordinat Y harus berupa angka.";
+                document.getElementById("informasi").innerHTML = text;
+                event.preventDefault();
+                return false;
+            }
+        
+            return true; // Jika semua validasi lolos, form dapat disubmit
+        }
+    </script>
+</body>
+</html>
