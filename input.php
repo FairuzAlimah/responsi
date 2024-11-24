@@ -18,7 +18,7 @@ if (empty($nama_pasar) || !is_numeric($luas__m2_) || !is_numeric($jml_kios) || !
 
 // Validasi tambahan
 if ($luas__m2_ <= 0 || $jml_kios <= 0 || $x < -180 || $x > 180 || $y < -90 || $y > 90) {
-    die("Data tidak valid. Luas dan jumlah kios harus lebih dari 0, longitude antara -180 dan 180, dan latitude antara -90 dan 90.");
+    die("Data tidak valid. Luas dan jumlah kios harus lebih dari 0, x antara -180 dan 180, dan y antara -90 dan 90.");
 }
 
 // Sesuaikan dengan setting MySQL
