@@ -31,10 +31,11 @@ echo '<style>
     }
     
     h1 {
-        color: #e63946;
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
+    color: #e63946;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px #ffcc00;
+}
     
     table {
         width: 80%;
@@ -107,7 +108,7 @@ echo '<style>
 </style>';
 
 if ($result->num_rows > 0) {
-    echo "<h1>Data Pasar Lampung</h1>";
+    echo "<h1>Data Pasar Tradisional di Provinsi Lampung</h1>";
     echo "<table><tr>
     <th>Nama Pasar</th>
     <th>X</th>
