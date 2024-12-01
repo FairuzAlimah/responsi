@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $update_success = true; // Tandai bahwa update berhasil
         echo "<script>
         alert('Data berhasil diperbarui!');
-        window.location.href = 'index.php'; // Kembali ke halaman utama
+        window.location.href = 'peta.php'; // Kembali ke halaman utama
     </script>";
     } else {
         echo "Error: " . $conn->error;

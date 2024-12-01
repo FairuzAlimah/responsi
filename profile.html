@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lampung</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        main {
+            margin-top: 75px;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #fff3cd, #f8d7da);
+        }
+
+        nav {
+            background-color: #e63946;
+            /* Warna merah lebih terang */
+        }
+
+        nav .nav-link {
+            color: #ffd166 !important;
+            /* Kuning terang */
+            font-weight: bold;
+        }
+
+        nav .nav-link:hover {
+            color: #fff !important;
+            /* Teks putih saat hover */
+            text-decoration: underline;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 1px solid #e63946;
+            /* Warna merah terang untuk border */
+        }
+
+        .card-header {
+            background-color: #ffd166;
+            /* Kuning terang untuk header */
+            font-weight: bold;
+            color: #e63946;
+            /* Merah terang untuk teks header */
+        }
+
+        .carousel-inner img {
+            border-radius: 8px;
+            border: 2px solid #e63946;
+            /* Border merah terang di gambar carousel */
+        }
+
+        .table th,
+        .table td {
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid #e63946;
+            /* Border merah terang di tabel */
+        }
+
+        a {
+            color: #ffd166;
+            /* Kuning terang untuk link */
+        }
+
+        a:hover {
+            color: #ffeb3b;
+            text-decoration: underline;
+        }
+
+        .mapouter {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #e63946;
+            /* Border merah terang di peta */
+        }
+
+        .gmap_canvas iframe {
+            border: none;
+        }
+
+        .alert {
+            background: #ffd166;
+            /* Kuning terang untuk background alert */
+            color: #e63946;
+            /* Merah terang untuk teks alert */
+            font-weight: bold;
+            border: 2px solid #e63946;
+            /* Border merah terang untuk alert */
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        .navbar-brand {
+            color: #ffd166 !important;
+            /* Warna kuning terang */
+        }
+
+        .navbar-brand:hover {
+            color: #ffeb3b !important;
+            /* Kuning lebih terang saat hover */
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg -bg-danger-rgb fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">PROVINSI LAMPUNG</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#deskripsi">Deskripsi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#penduduk">Penduduk</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#kecamatan">Kabupaten/Kota</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#website">Website</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#galeri">Galeri</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#peta">Peta</a>
+                </li>
+            </ul>
+
+        </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container border  rounded">
+            <div class="alert alert-warning text-center" role="alert">
+                <h1>PROVINSI LAMPUNG</h1>
+            </div>
+            <div class="row">
+                <div class="col-6 offset-3">
+                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/lam.jpeg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/photo_2024-08-26_14-35-52.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/photo_2024-08-26_14-35-12.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card mt-3">
+                <div class="card-header alert alert-warning">
+                    <h6 id="deskripsi">Deskripsi</h6>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Lampung adalah sebuah provinsi di bagian ujung selatan Pulau Sumatra, Indonesia. Ibu kota
+                        provinsi ini terletak di Kota Bandar Lampung. Provinsi ini memiliki dua kota, yaitu Kota
+                        Bandar Lampung dan Kota Metro, serta 13 kabupaten. Secara geografis, posisi provinsi ini di
+                        sebelah barat berbatasan dengan Samudra Hindia, di sebelah timur dengan Laut Jawa, di sebelah
+                        utara berbatasan dengan Provinsi Sumatera Selatan dan Provinsi Bengkulu, serta di sebelah
+                        selatan berbatasan dengan Selat Sunda.</p>
+                    <p>
+                        Provinsi Lampung memiliki pelabuhan utama, yaitu Pelabuhan Internasional Panjang dan Pelabuhan
+                        Penyebrangan Bakauheni, serta bandar udara utama yakni Bandara Internasional Radin Inten II
+                        terletak 28 km dari ibu kota provinsi, serta stasiun kereta api besar Tanjung Karang yang
+                        terletak di pusat ibu kota provinsi. Pada tahun 2022, penduduk Provinsi Lampung berjumlah
+                        9,176,546 jiwa, dengan kepadatan 270 jiwa/km2.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header alert alert-warning">
+                    <h6 id="penduduk">Penduduk</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped table-bordered">
+                        <tr class="text-center">
+                            <th>Penduduk</th>
+                            <th>Jumlah</th>
+                        </tr>
+
+                        <tr>
+                            <td>Laki-Laki</td>
+                            <td>4.697.217 Jiwa</td>
+                        </tr>
+                        <tr>
+                            <td>Perempuan</td>
+                            <td>4.479.329 Jiwa</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>9.176.546 Jiwa</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header alert alert-warning">
+                    <h6 id="kecamatan">Kabupaten/Kota</h6>
+                </div>
+                <div class="card-body">
+                    <ol>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <li>Kabupaten Lampung Barat</li>
+                                <li>Kabupaten Lampung Utara</li>
+                                <li>Kabupaten Lampung Selatan</li>
+                                <li>Kabupaten Lampung Timur</li>
+                                <li>Kabupaten Lampung Tengah</li>
+                                <li>Kabupaten Tanggamus</li>
+                                <li>Kabupaten Way Kanan</li>
+                                <li>Kabupaten Mesuji</li>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <li>Kabupaten Tulang Bawang </li>
+                                <li>Kabupaten Tulang Bawang Barat</li>
+                                <li>Kabupaten Pringsewu </li>
+                                <li>Kabupaten Pesawaran</li>
+                                <li>Kabupaten Pesisir Barat</li>
+                                <li>Kota Bandar Lampung </li>
+                                <li>Kota Metro</li>
+                            </div>
+                        </div>
+
+
+
+                    </ol>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header alert alert-warning">
+                    <h6 id="website">Website</h6>
+                </div>
+                <div class="card-body">
+                    <a href="https://lampungprov.go.id/" target="_blank" rel="noopener noreferrer">
+                        https://lampungprov.go.id/
+                    </a>
+                </div>
+            </div>
+
+
+
+            <div class="card mt-3">
+                <div class="card-header alert alert-warning">
+                    <h6 id="galeri">Galeri</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-4">
+                            <img src="images/photo_2024-08-26_14-35-12.jpg" class="img-fluid" alt="...">
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4">
+                            <img src="images/photo_2024-08-26_14-35-52.jpg" class="img-fluid" alt="...">
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4">
+                            <img src="images/download.jpeg" class="img-fluid" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header alert alert-warning">
+                    <h6 id="peta">Peta</h6>
+                </div>
+                <div class="card-body">
+                    <div class="mapouter">
+                        <div class="gmap_canvas"><iframe width="820" height="560" id="gmap_canvas"
+                                src="https://maps.google.com/maps?q=provinsi+lampung&t=&z=8&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                                href="https://textcaseconvert.com"></a><br><a
+                                href="https://www.analarmclock.com"></a><br>
+                            <style>
+                                .mapouter {
+                                    position: relative;
+                                    text-align: center;
+                                    height: 560px;
+                                    width: 100%;
+                                }
+                            </style><a href="https://www.ongooglemaps.com">insert google map html</a>
+                            <style>
+                                .gmap_canvas {
+                                    overflow: hidden;
+                                    background: none !important;
+                                    height: 560px;
+                                    width: 100%;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -56,8 +56,8 @@
     <p>Data Anda telah berhasil dimasukkan ke dalam sistem.</p>
     
     <!-- Tautan untuk kembali ke halaman form -->
-    <a href="index.html">
-        <button>Kembali ke WebGIS</button>
+    <a href="peta.php">
+        <button>Open WebGIS</button>
     </a>
 
     <!-- Tambahan tombol untuk kembali ke tabel -->
