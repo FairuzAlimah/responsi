@@ -17,98 +17,129 @@ if ($conn->connect_error) {
 $sql = "SELECT id, nama_pasar, x, y, luas__m2_, wadmkk, alamat, jml_kios FROM pasar_lampung";
 $result = $conn->query($sql);
 
-// Tambahkan style CSS
-echo '<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #fff5e6;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        flex-direction: column;
-    }
-    
-    h1 {
-    color: #e63946;
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 5px #ffcc00;
-}
-    
-    table {
-        width: 80%;
-        border-collapse: collapse;
-        margin: 20px 0;
-        background-color: #fff;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    th, td {
-        padding: 12px 15px;
-        text-align: center;
-        border: 1px solid #ffcc00;
-        color: #333;
-    }
-    
-    th {
-        background-color: #e63946;
-        color: white;
-    }
-    
-    tr:nth-child(even) {
-        background-color: #f9f9f9;
-    }
-    
-    tr:hover {
-        background-color: #ffcc00;
-        color: #e63946;
-    }
-    
-    a {
-        color: #e63946;
-        text-decoration: none;
-        font-weight: bold;
-    }
+echo '
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="img/lpgg.png" rel="icon">
+    <title>Data Pasar Tradisional di Lampung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff5e6;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        h1 {
+            color: #e63946;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px #ffcc00;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+        }
+        
+        .btn-home {
+            background-color: #003366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-    a:hover {
-        text-decoration: underline;
-    }
+        .btn-home:hover {
+            background-color: #99ccff;
+        }
 
-    /* Style for action buttons */
-    .action-buttons a {
-        display: block; /* Ensure buttons appear on new lines */
-        padding: 8px 10px;
-        border-radius: 5px;
-        font-size: 13px;
-        font-weight: bold;
-        cursor: pointer;
-        margin: 5px 0; /* Adds vertical spacing between the buttons */
-        text-decoration: none;
-    }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #ffcc00;
+            color: #333;
+        }
+        
+        th {
+            background-color: #e63946;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover {
+            background-color: #ffcc00;
+            color: #e63946;
+        }
+        
+        a {
+            color: #e63946;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    .btn-edit {
-        background-color: #4caf50; /* Hijau (Green) */
-        color: white;
-    }
+        a:hover {
+            text-decoration: underline;
+        }
 
-    .btn-edit:hover {
-        background-color: #45a049; /* Hijau lebih gelap */
-    }
+        .action-buttons a {
+            display: block;
+            padding: 8px 10px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px 0;
+            text-decoration: none;
+        }
 
-    .btn-delete {
-        background-color: #e63946; /* Merah (Red) */
-        color: white;
-    }
+        .btn-edit {
+            background-color: #4caf50;
+            color: white;
+        }
 
-    .btn-delete:hover {
-        background-color: #c03434; /* Merah lebih gelap */
-    }
-</style>';
+        .btn-edit:hover {
+            background-color: #45a049;
+        }
+
+        .btn-delete {
+            background-color: #e63946;
+            color: white;
+        }
+
+        .btn-delete:hover {
+            background-color: #c03434;
+        }
+    </style>
+</head>
+<body>';
 
 if ($result->num_rows > 0) {
-    echo "<h1>Data Pasar Tradisional di Provinsi Lampung</h1>";
+    echo "
+    <h1>
+        Data Pasar Tradisional di Provinsi Lampung
+        <a href='data.html' class='btn-home'>Tambah Data</a>
+    </h1>";
     echo "<table><tr>
     <th>Nama Pasar</th>
     <th>X</th>
@@ -129,7 +160,6 @@ if ($result->num_rows > 0) {
         <td>" . $row["jml_kios"] . "</td>
         <td>" . $row["wadmkk"] . "</td>
         <td>" . $row["alamat"] . "</td>
-        
         <td class='action-buttons'>
             <a href='edit.php?id=" . $row["id"] . "' class='btn-edit'>Edit</a>
             <a href='delete.php?id=" . $row["id"] . "' onclick='return confirm(\"Apakah Anda yakin ingin menghapus data ini?\")' class='btn-delete'>Hapus</a>
@@ -138,8 +168,12 @@ if ($result->num_rows > 0) {
 
     echo "</table>";
 } else {
-    echo "0 results";
+    echo "<p>Tidak ada data yang ditemukan.</p>";
 }
+
+echo '
+</body>
+</html>';
 
 // Tutup koneksi
 $conn->close();
