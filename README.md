@@ -7,7 +7,7 @@ Website ini dibuat untuk mempermudah masyarakat dalam mengakses informasi terkai
 
 >**Komponen Pembangun**
 >
->Website ini menggunakan data yang didapatkan dari geoportal Lampung dan GeoServer, serta menggunakan PHP dalam pengambilan data yang berada pada database phpmyAdmin. Selain itu, penggunaan library JavaScript berupa Leaflet.JS dalam menampilkan basemap hingga plugins yang ada pada website tersebut. Pengambilan style yang lebih menarik didapatkan dari BootStrap dan FontAwesome digunakan dalam pengambilan icon yang menarik.
+>Website ini menggunakan data yang didapatkan dari geoportal Lampung dan GeoServer, serta menggunakan PHP dalam pengambilan data yang berada pada database phpmyAdmin. Selain itu, penggunaan library JavaScript berupa Leaflet.JS dalam menampilkan basemap hingga plugins yang ada pada website tersebut. Pengambilan style yang lebih menarik didapatkan dari BootStrap dan FontAwesome digunakan dalam pengambilan icon yang menarik pada file HTML dan PHP.
 
 >**Sumber Data**
 >
@@ -16,10 +16,12 @@ Website ini dibuat untuk mempermudah masyarakat dalam mengakses informasi terkai
 
 
 >**Tangkapan Layar Komponen Penting pada Website**
->![Peta Interaktif]([assets/peta_interaktif.png](https://github.com/FairuzAlimah/repository/blob/main/assets/peta_interaktif.png?raw=true))
->![Halaman Awal]([assets/halaman_awal.png](https://github.com/FairuzAlimah/repository/blob/main/assets/halaman_awal.png?raw=true))
->![Tabel Data]([assets/tabel.png](https://github.com/FairuzAlimah/repository/blob/main/assets/tabel.png?raw=true))
->![edit_data]([assets/edit_data.png](https://github.com/FairuzAlimah/repository/blob/main/assets/edit_data.png?raw=true))
+>![Peta Interaktif](foto/peta_interaktif.png)
+>![Halaman Awal](foto/halaman_awal.png)
+>![Tabel Data](foto/tabel.png)
+>![edit_data](foto/edit_data.png)
+
+
 
 
 
