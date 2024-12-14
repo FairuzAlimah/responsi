@@ -7,7 +7,7 @@ Website ini dibuat untuk mempermudah masyarakat dalam mengakses informasi terkai
 
 >**Komponen Pembangun**
 >
->Website ini menggunakan data yang didapatkan dari geoportal Lampung dan GeoServer, serta menggunakan PHP dalam pengambilan data yang berada pada database phpmyAdmin. Selain itu, penggunaan library JavaScript berupa Leaflet.JS dalam menampilkan basemap hingga plugins yang ada pada website tersebut. Pengambilan style yang lebih menarik didapatkan dari BootStrap dan FontAwesome digunakan dalam pengambilan icon yang menarik pada file HTML dan PHP.
+>Website ini menggunakan data yang didapatkan dari geoportal Lampung dan GeoServer, serta menggunakan PHP dalam pengambilan data yang berada pada database phpmyAdmin. Penggunaan GeoJSON juga dilakukan dalam menampilkan titik peta tersebut. Selain itu, penggunaan library JavaScript berupa Leaflet.JS dalam menampilkan basemap hingga plugins yang ada pada website tersebut. Pengambilan style yang lebih menarik didapatkan dari BootStrap dan FontAwesome digunakan dalam pengambilan icon yang menarik dan diimplementasikan pada file HTML dan PHP dengan menggunakan CSS.
 
 >**Sumber Data**
 >
